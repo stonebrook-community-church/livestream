@@ -44,11 +44,11 @@ The presets already have the right headroom saved. You only need to notice when 
 
 ## Rule of thirds
 
-The **rule of thirds** splits the frame into three columns and three rows. A shot looks balanced when the person stands on one of the lines instead of dead center. The dashed lines in the preset drawings show these thirds.
+The **rule of thirds** splits the frame into three columns and three rows. A shot looks balanced when the person sits on one of the lines or in a side column, instead of dead center. The dashed lines in the preset drawings show these thirds.
 
 <figure markdown="span">
-  ![Cam 2 P3: the preacher stands on the left third line. The right two thirds are empty and marked for the slide.](../assets/diagrams/cam2-p3.svg)
-  <figcaption>Cam 2 P3 puts the preacher on the left third. The right side stays empty for the slide.</figcaption>
+  ![Cam 2 P3: the pulpit is on the left third line, with the preacher just left of it. The right side is empty, with a 16:9 box marked for the slide.](../assets/diagrams/cam2-p3.svg)
+  <figcaption>Cam 2 P3 puts the pulpit on the left third line. The right side stays empty for the slide.</figcaption>
 </figure>
 
 ## Lead room
@@ -86,7 +86,7 @@ All presets are on the [Cameras and Presets](cameras-and-presets.md) page.
 
 A **source** is anything that gives a picture: Cam 1, Cam 2, ProPresenter Lyrics or ProPresenter Slides.
 
-A **scene** is a finished picture built from one or more sources, already arranged. Each Stream Deck button gives you one scene. You never build a scene during the service; you just press its button.
+A **scene** is a finished picture built from one or more sources, already arranged. Each Stream Deck button gives you one scene. You never build a scene during the service; you just press its button, then **Publish** (see [Program and preview](#program-and-preview)).
 
 <figure markdown="span">
   ![Scene 7 — Sermon Split: the preacher on the left from Cam 2, with the sermon slide in a box on the right.](../assets/diagrams/scene-7-sermon-split.svg)
@@ -124,25 +124,32 @@ A **clean** shot is a camera with nothing on top: no lyrics, no slide. **Full sc
 
 ## Cut
 
-A **cut** is a switch from one shot to the next. On our setup, you cut by pressing a scene button on the Stream Deck.
+A **cut** is a switch from one shot to the next. On our setup, a cut is two presses on the Stream Deck:
+
+1. Press the scene button. The scene appears in Ecamm's **preview**, not on air.
+2. Press **Publish**, the bottom-right button. The scene goes on air.
 
 <figure markdown="span">
-  ![Two frames with an arrow labeled CUT between them. Left: Scene 4 — Cam 1 Clean. Right: Scene 7 — Sermon Split.](../assets/diagrams/glossary-cut.svg)
-  <figcaption>A cut from Scene 4 — Cam 1 Clean to Scene 7 — Sermon Split. One button press.</figcaption>
+  ![Two frames with an arrow labeled CUT between them. Left: Scene 4 — Cam 1 Clean. Right: Scene 7 — Sermon Split. Press the scene button, then Publish.](../assets/diagrams/glossary-cut.svg)
+  <figcaption>A cut from Scene 4 — Cam 1 Clean to Scene 7 — Sermon Split: press 7, then Publish.</figcaption>
 </figure>
 
 ## Program and preview
 
 The **program** is the picture going out live right now. It is what viewers see. Whatever is in the program is **live** or **on air**.
 
-The **preview** is a shot you get ready before it goes live. On our setup, that means the camera that is **off air**: the one not in the current scene. You can move the off-air camera, because nobody is watching it. When it's ready, you cut to it, and it becomes the program.
+The **preview** is the next scene, waiting in Ecamm before it goes live. Viewers don't see it. When you press a scene button on the Stream Deck, the scene appears in the preview. When you press **Publish**, the bottom-right button, the preview becomes the program.
+
+The preview lets you check a scene before anyone sees it. If it looks wrong, press a different scene button. Nothing changes on air until you press Publish.
+
+The camera that isn't in the program is **off air**. You can move the off-air camera, because nobody is watching it.
 
 <figure markdown="span">
-  ![Two frames side by side. Left: PROGRAM, on air, Scene 4 — Cam 1 Clean on Cam 1 P3, with a LIVE label. Right: PREVIEW, off air, Cam 2 on Cam 2 P3.](../assets/diagrams/glossary-program-preview.svg)
-  <figcaption>Cam 1 is live, so don't move it. Cam 2 is off air, so you can recall a new preset on it.</figcaption>
+  ![Two frames side by side. Left: PROGRAM, on air, Scene 4 — Cam 1 Clean on Cam 1 P3, with a LIVE label. Right: PREVIEW, not on air yet, Scene 7 — Sermon Split on Cam 2 P3.](../assets/diagrams/glossary-program-preview.svg)
+  <figcaption>Cam 1 is live, so don't move it. Scene 7 is loaded in the preview. Press Publish to put it on air.</figcaption>
 </figure>
 
-Which camera is live depends on the scene:
+Which camera is live depends on the scene in the **program**, not the preview:
 
 | Scene on air | Live camera | Off-air camera (safe to move) |
 |---|---|---|
@@ -150,7 +157,10 @@ Which camera is live depends on the scene:
 | 3 Cam 2 + Lyrics, 5 Cam 2 Clean, 7 Sermon Split, 8 Break | Cam 2 | Cam 1 |
 | 1 Countdown, 6 Full Slide, 9 End Slate | None | Both |
 
-Where you watch the off-air camera at the booth (which screen or window): TBD. Your trainer will show you during the hands-on session.
+!!! danger "Only move the camera that isn't live"
+    A camera can be in the preview and the program at the same time, for example Scene 4 — Cam 1 Clean on air with Scene 2 — Cam 1 + Lyrics in the preview. Cam 1 is still live. Check the program before you move a camera.
+
+Where the preview and program appear on the booth screen: TBD. Your trainer will show you during the hands-on session.
 
 ## Other words on this site
 
@@ -158,6 +168,7 @@ Where you watch the off-air camera at the booth (which screen or window): TBD. Y
 |---|---|
 | **Safe shot** | A shot that is never wrong: P1, the wide shot, on either camera. |
 | **Exposure** | How bright the picture is and what color it has. Ours is fixed, so you never change it. See [Cameras and Presets](cameras-and-presets.md#exposure). |
+| **Publish** | The bottom-right Stream Deck button. It puts the scene in the preview on air. |
 | **Broadcasting** | Ecamm is sending the program out to Resi. |
 | **Stream** | The live video viewers watch on YouTube and the church website. Resi sends it. |
 | **T-30, T-60** | 30 or 60 minutes before the service starts. |

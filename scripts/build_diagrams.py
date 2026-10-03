@@ -225,7 +225,13 @@ def view_cam2_p2():
 
 
 def view_cam2_p3():
-    return side_stage(520, 420) + person(280, 60, 430) + lectern(395, 230, 120, 270) + mic_stand(370, 205, 240, 0.9)
+    """Pulpit on the left third line, leaving the right side for the slide in Scene 7."""
+    return side_stage(512, 412) + person(205, 60, 430) + lectern(W / 3, 230, 120, 270) + mic_stand(295, 205, 240, 0.9)
+
+
+# Right-side slide area for Cam 2 P3 / Scene 7 — Sermon Split: 16:9 (448 x 252).
+SLIDE_X, SLIDE_Y, SLIDE_W, SLIDE_H = 486, 94, 448, 252
+SLIDE_CX = SLIDE_X + SLIDE_W / 2
 
 
 def view_cam2_p4():
@@ -269,11 +275,11 @@ PRESETS = [
     ("cam2-p2.svg", "Cam 2 P2", "Band / instruments", view_cam2_p2,
      chip(944, 482, "Band and instruments", anchor="end")),
     ("cam2-p3.svg", "Cam 2 P3", "Pulpit, full body, subject framed left", view_cam2_p3,
-     headroom(370, 60)
-     + f'<rect x="510" y="90" width="420" height="300" rx="8" fill="none" stroke="{INK}" stroke-width="2.5" stroke-dasharray="12 8"/>'
-     + text(720, 225, "Keep this side empty:", 22, "bold", INK, "middle")
-     + text(720, 257, "the slide goes here in", 20, "normal", INK, "middle")
-     + text(720, 287, "Scene 7 — Sermon Split", 20, "bold", INK, "middle")
+     headroom(295, 60)
+     + f'<rect x="{SLIDE_X}" y="{SLIDE_Y}" width="{SLIDE_W}" height="{SLIDE_H}" rx="6" fill="none" stroke="{INK}" stroke-width="2.5" stroke-dasharray="12 8"/>'
+     + text(SLIDE_CX, 190, "Keep this side empty:", 22, "bold", INK, "middle")
+     + text(SLIDE_CX, 222, "the slide goes here in", 20, "normal", INK, "middle")
+     + text(SLIDE_CX, 252, "Scene 7 — Sermon Split", 20, "bold", INK, "middle")
      + chip(944, 482, "Full body, subject on the left third", anchor="end")),
     ("cam2-p4.svg", "Cam 2 P4", "Communion table", view_cam2_p4,
      chip(944, 482, "Communion table fills the frame", anchor="end")),
@@ -308,17 +314,18 @@ def lyrics_bar():
 
 def sermon_slide():
     """The slide box on the right side of Scene 7 — Sermon Split."""
-    return (f'<rect x="490" y="96" width="440" height="248" rx="6" fill="{FILL}" stroke="{INK}" stroke-width="3"/>'
-            + text(710, 170, "Sermon slide", 30, "bold", INK, "middle")
-            + f'<rect x="560" y="200" width="300" height="16" rx="8" fill="{SOFT}"/>'
-            + f'<rect x="560" y="232" width="240" height="16" rx="8" fill="{SOFT}"/>'
-            + f'<rect x="560" y="264" width="270" height="16" rx="8" fill="{SOFT}"/>')
+    x = SLIDE_CX - 150
+    return (f'<rect x="{SLIDE_X}" y="{SLIDE_Y}" width="{SLIDE_W}" height="{SLIDE_H}" rx="6" fill="{FILL}" stroke="{INK}" stroke-width="3"/>'
+            + text(SLIDE_CX, 170, "Sermon slide", 30, "bold", INK, "middle")
+            + f'<rect x="{x}" y="200" width="300" height="16" rx="8" fill="{SOFT}"/>'
+            + f'<rect x="{x}" y="232" width="240" height="16" rx="8" fill="{SOFT}"/>'
+            + f'<rect x="{x}" y="264" width="270" height="16" rx="8" fill="{SOFT}"/>')
 
 
 def scene_frames():
     lyric_note = chip(944, 312, "Lyrics: lower third only", anchor="end")
     split = (sermon_slide()
-             + chip(710, 360, "ProPresenter Slides", anchor="middle")
+             + chip(SLIDE_CX, SLIDE_Y + SLIDE_H + 14, "ProPresenter Slides", anchor="middle")
              + chip(24, 482, "Cam 2 P3 — subject on the left"))
     brk = (f'<rect x="200" y="150" width="560" height="250" rx="12" fill="{PAPER}" fill-opacity="0.82" stroke="{INK}" stroke-width="2"/>'
            + text(480, 215, "Break slide overlay", 30, "bold", INK, "middle")
@@ -411,7 +418,7 @@ def build_signal_flow():
     d += box(40, 380, 230, 54, "Lyrics")
     d += box(40, 446, 230, 54, "Slides")
     # Ecamm + Stream Deck
-    d += box(390, 30, 220, 64, "Stream Deck", "one button = one scene", operated=True)
+    d += box(390, 30, 220, 64, "Stream Deck", "scene, then Publish", operated=True)
     d += box(390, 210, 220, 130, "Ecamm Live", "builds the scenes", operated=True)
     d += arrow(500, 94, 500, 208, control=True)
     for y_src, y_dst in ((172, 236), (256, 262), (407, 288), (473, 314)):
@@ -435,7 +442,7 @@ def build_signal_flow():
     (OUT / "signal-flow.svg").write_text(svg(
         w, h, "Livestream signal flow",
         "Cam 1 and Cam 2 (moved by the SuperJoy) and ProPresenter Lyrics and Slides feed Ecamm Live. "
-        "The Stream Deck picks the Ecamm scene. Ecamm sends the program to Resi, which streams to YouTube "
+        "The Stream Deck loads an Ecamm scene into the preview, and its Publish button puts it on air. Ecamm sends the program to Resi, which streams to YouTube "
         "and the church website.", d))
 
 
@@ -509,6 +516,7 @@ def build_room_map():
 
 SCENES = ["Countdown", "Cam 1 + Lyrics", "Cam 2 + Lyrics", "Cam 1 Clean", "Cam 2 Clean",
           "Full Slide", "Sermon Split", "Break", "End Slate"]
+PUBLISH_KEY = 14  # bottom-right key (0-based, left to right, top to bottom)
 
 
 def build_stream_deck():
@@ -533,16 +541,19 @@ def build_stream_deck():
                 d += text(x + key / 2, y + 132, parts[1], 19, "bold", INK, "middle")
             else:
                 d += text(x + key / 2, y + 118, name, 19, "bold", INK, "middle")
+        elif i == PUBLISH_KEY:
+            d += f'<rect x="{x}" y="{y}" width="{key}" height="{key}" rx="16" fill="{INK}" stroke="{INK}" stroke-width="3"/>'
+            d += text(x + key / 2, y + key / 2 + 8, "Publish", 26, "bold", PAPER, "middle")
         else:
             d += (f'<rect x="{x}" y="{y}" width="{key}" height="{key}" rx="16" fill="none" stroke="{MID}" '
                   f'stroke-width="2" stroke-dasharray="8 7"/>')
             d += text(x + key / 2, y + key / 2 + 6, "empty", 18, "normal", MID, "middle")
-    d += text(20, dh + 70, "One button = one complete scene. Empty buttons stay empty on purpose.", 20, "normal", INK)
+    d += text(20, dh + 70, "Scene button loads the preview. Publish puts it on air. Empty buttons stay empty.", 20, "normal", INK)
     (OUT / "stream-deck.svg").write_text(svg(
         w, h, "Stream Deck button layout",
         "15-key Stream Deck. Top row: 1 Countdown, 2 Cam 1 + Lyrics, 3 Cam 2 + Lyrics, 4 Cam 1 Clean, "
         "5 Cam 2 Clean. Second row: 6 Full Slide, 7 Sermon Split, 8 Break, 9 End Slate, then empty. "
-        "Third row: empty.", d))
+        "Third row: empty, except Publish at the far right, which puts the scene in the preview on air.", d))
 
 
 # ---------- Glossary (Video Basics page) ----------
@@ -580,13 +591,13 @@ def ptz_camera(cx, cy, s=1.0, side=False):
 def build_glossary():
     # Lead room: Cam 2 P3 with the facing direction and the open space marked.
     lead = (guides()
-            + f'<line x1="318" y1="88" x2="420" y2="88" stroke="{INK}" stroke-width="3" marker-end="url(#arrow)"/>'
-            + chip(428, 70, "Faces this way", 16)
-            + f'<line x1="350" y1="440" x2="940" y2="440" stroke="{INK}" stroke-width="2.5" '
+            + f'<line x1="243" y1="88" x2="345" y2="88" stroke="{INK}" stroke-width="3" marker-end="url(#arrow)"/>'
+            + chip(353, 70, "Faces this way", 16)
+            + f'<line x1="395" y1="440" x2="940" y2="440" stroke="{INK}" stroke-width="2.5" '
               f'marker-start="url(#arrow)" marker-end="url(#arrow)"/>'
-            + chip(645, 396, "Lead room: open space on the side they face", 18, "middle"))
+            + chip(667, 396, "Lead room: open space on the side they face", 18, "middle"))
     frame("glossary-lead-room.svg", "Cam 2 P3", "Lead room",
-          "Mock 16:9 frame of Cam 2 P3. The preacher stands on the left third and faces right. "
+          "Mock 16:9 frame of Cam 2 P3. The pulpit is on the left third line; the preacher faces right. "
           "An arrow marks the open space on the right side of the frame: the lead room.",
           view_cam2_p3(), lead)
 
@@ -596,7 +607,7 @@ def build_glossary():
     d = f'<rect width="{w}" height="{h}" rx="14" fill="{PAPER}"/>'
     for x, head, sub, view, note, live in (
             (40, "PROGRAM", "On air: viewers see this", view_cam1_p3(), "Scene 4 — Cam 1 Clean, Cam 1 P3", True),
-            (518, "PREVIEW", "Off air: safe to move", view_cam2_p3(), "Cam 2: recall Cam 2 P3 here", False)):
+            (518, "PREVIEW", "Not on air yet: check it here", view_cam2_p3() + sermon_slide(), "Scene 7 — Sermon Split", False)):
         d += text(x, 44, head, 28, "bold")
         d += text(x, 72, sub, 20, "normal", DARK)
         d += thumb(x, 90, s, view, 8 if live else 2)
@@ -604,13 +615,14 @@ def build_glossary():
             d += f'<rect x="{x + 14}" y="104" width="74" height="34" rx="6" fill="{INK}"/>' + text(x + 51, 128, "LIVE", 20, "bold", PAPER, "middle")
         else:
             d += (f'<rect x="{x + 14}" y="104" width="104" height="34" rx="6" fill="{PAPER}" stroke="{INK}" stroke-width="2"/>'
-                  + text(x + 66, 128, "OFF AIR", 18, "bold", INK, "middle"))
+                  + text(x + 66, 128, "NEXT", 18, "bold", INK, "middle"))
         d += chip(x + tw / 2, 90 + th + 16, note, 17, "middle")
-    d += text(w / 2, h - 24, "Move only the camera that is off air. Then cut, so it becomes the program.", 19, "normal", INK, "middle")
+    d += text(w / 2, h - 24, "A scene button loads the preview. Publish puts the preview on air as the program.", 19, "normal", INK, "middle")
     (OUT / "glossary-program-preview.svg").write_text(svg(
         w, h, "Program and preview",
         "Two frames side by side. Left: PROGRAM, on air, showing Scene 4 — Cam 1 Clean on Cam 1 P3, with a thick "
-        "border and a LIVE label. Right: PREVIEW, off air, showing Cam 2 on Cam 2 P3. This is the camera you may move.", d))
+        "border and a LIVE label. Right: PREVIEW, not on air yet, showing Scene 7 — Sermon Split on Cam 2 P3, with a NEXT label. "
+        "Pressing Publish puts the preview on air.", d))
 
     # Cut: one shot replaced by the next.
     w, h, s = 1000, 390, 0.42
@@ -622,11 +634,13 @@ def build_glossary():
     d += chip(w - 40 - tw / 2, 40 + th + 16, "Scene 7 — Sermon Split", 17, "middle")
     d += arrow(40 + tw + 20, 40 + th / 2, w - 40 - tw - 20, 40 + th / 2)
     d += text(w / 2, 40 + th / 2 - 18, "CUT", 24, "bold", INK, "middle")
-    d += text(w / 2, h - 24, "Press one Stream Deck button: the picture changes from one shot to the next.", 19, "normal", INK, "middle")
+    d += text(w / 2, 40 + th / 2 + 36, "7, then", 17, "normal", DARK, "middle")
+    d += text(w / 2, 40 + th / 2 + 58, "Publish", 17, "normal", DARK, "middle")
+    d += text(w / 2, h - 24, "Press the scene button, then Publish: the picture changes from one shot to the next.", 19, "normal", INK, "middle")
     (OUT / "glossary-cut.svg").write_text(svg(
         w, h, "Cut",
         "Two frames with an arrow labeled CUT between them. Left: Scene 4 — Cam 1 Clean. Right: Scene 7 — Sermon Split. "
-        "Pressing one Stream Deck button switches from one to the other.", d))
+        "Pressing Stream Deck button 7, then Publish, switches from one to the other.", d))
 
     # PTZ: pan, tilt, zoom.
     w, h = 1000, 380

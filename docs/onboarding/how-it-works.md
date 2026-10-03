@@ -15,8 +15,8 @@ Read the picture from left to right:
 
 1. **Four sources** send pictures into Ecamm Live. A **source** is anything that gives you a picture.
 2. **Ecamm Live** is the software on the booth computer. It combines the sources into finished **scenes**, for example "Cam 1 with lyrics on top".
-3. The **Stream Deck** is a small keypad with picture buttons. Each button picks one scene in Ecamm.
-4. Whatever scene Ecamm shows right now is the **program**: the picture that goes out live. Ecamm sends the program to **Resi**.
+3. The **Stream Deck** is a small keypad with picture buttons. Each scene button loads one scene into Ecamm's **preview**, where you can check it. Viewers don't see the preview.
+4. The **Publish** button, at the bottom right of the Stream Deck, puts the preview on air. The picture on air is the **program**. Ecamm sends the program to **Resi**.
 5. **Resi** is the streaming service. It sends the program to **YouTube** and to the video player on the **church website**.
 
 ## The four sources
@@ -30,7 +30,7 @@ Read the picture from left to right:
 
 A **PTZ camera** is a camera that a motor can pan (turn left or right), tilt (aim up or down) and zoom (get closer or wider). You never touch the camera itself. You move it from the booth with the **SuperJoy**, a joystick controller. Each camera has saved shots called **presets**, and one button on the SuperJoy recalls a preset. See [Cameras and Presets](cameras-and-presets.md).
 
-ProPresenter runs on a separate computer, and another team operates it. You don't choose which lyric or slide appears. You only choose *whether* the lyrics or slides are part of the picture, by pressing a scene button.
+ProPresenter runs on a separate computer, and another team operates it. You don't choose which lyric or slide appears. You only choose *whether* the lyrics or slides are part of the picture, by choosing a scene.
 
 ## Who does what
 
@@ -39,7 +39,7 @@ ProPresenter runs on a separate computer, and another team operates it. You don'
 | **You, the livestream operator** | Move the cameras with the SuperJoy. Pick scenes with the Stream Deck. Start broadcasting in Ecamm before T-30. End the Resi stream after the service. Do the [post-production](../post-production.md) afterwards. |
 | **ProPresenter operator** | Shows the right lyric or slide at the right time, in the room and on the stream. |
 | **Audio team** | All sound. You don't adjust audio. If the sound is wrong, tell the audio team. |
-| **On-call tech lead** | Helps when something breaks. Their contact details are on the private booth card. |
+| **Tech lead** | Helps when something breaks. Usually at church on Sunday. If not, their contact details are on the private booth card. |
 | **Livestream Lead** | Trains new operators, signs off the [Skills Checklist](../training/skills-checklist.md), and decides changes to presets and scenes. |
 
 ## When the stream starts and stops
@@ -56,9 +56,9 @@ The full timeline is on the [Sunday Flow](sunday-flow.md) page.
 | You use | You don't touch |
 |---|---|
 | SuperJoy (camera presets) | Audio mixer and sound settings |
-| Stream Deck (scenes) | The ProPresenter computer |
+| Stream Deck (scenes and Publish) | The ProPresenter computer |
 | Ecamm Live (scene management) | Saved presets and scene layouts (the Livestream Lead changes these) |
 | Resi (end the stream) | Camera menus and exposure settings |
 
 !!! tip "Not sure who owns a problem?"
-    Lyrics or slides wrong: tell the ProPresenter operator. Sound wrong: tell the audio team. Picture or stream wrong and you can't fix it with a scene button: call the on-call tech lead.
+    Lyrics or slides wrong: tell the ProPresenter operator. Sound wrong: tell the audio team. Picture or stream wrong and you can't fix it with a scene button: find the tech lead.

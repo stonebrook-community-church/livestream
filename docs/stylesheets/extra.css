@@ -40,6 +40,54 @@
   max-width: 14rem;
 }
 
+/* ---------- Skills Checklist (training/skills-checklist.md) ---------- */
+/* Same column widths in every group table, with room to write a date */
+.md-typeset .skills-checklist table:not([class]) {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.md-typeset .skills-checklist th:nth-child(2),
+.md-typeset .skills-checklist td:nth-child(2) {
+  width: 5.5em;
+}
+/* "Done" cell: a real checkbox you can tick on screen, or with a pen on paper */
+.md-typeset .skills-checklist td:nth-child(2) {
+  text-align: center;
+  vertical-align: middle;
+}
+.md-typeset .skills-checklist input[type="checkbox"] {
+  width: 1.1em;
+  height: 1.1em;
+  margin: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  accent-color: var(--md-default-fg-color);
+}
+.md-typeset .skills-checklist th:nth-child(3),
+.md-typeset .skills-checklist td:nth-child(3) {
+  width: 8em;
+}
+.md-typeset .signature-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em 2em;
+  margin-top: 2.5em;
+}
+.md-typeset .signature-field {
+  flex: 1 1 12em;
+  font-size: 0.85em;
+}
+.md-typeset .signature-field.signature-date {
+  flex: 0 1 8em;
+}
+.md-typeset .signature-line {
+  display: block;
+  height: 2em;
+  border-bottom: 1.5px solid var(--md-default-fg-color);
+  margin-bottom: 0.2em;
+}
+
 /* ---------- Print ---------- */
 @page {
   size: letter;
@@ -136,6 +184,24 @@
   .md-typeset .reference-sheet .admonition {
     margin: 0.5em 0;
     font-size: 10pt;
+  }
+
+  /* Skills Checklist: tighter rows so all groups and the signatures fit one page */
+  .md-typeset .skills-checklist .md-typeset__scrollwrap,
+  .md-typeset .skills-checklist table:not([class]) {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+  }
+  .reference-sheet .skills-checklist table:not([class]) td,
+  .reference-sheet .skills-checklist table:not([class]) th {
+    padding: 0.2em 0.5em;
+  }
+  .md-typeset .reference-sheet .skills-checklist h2 {
+    margin: 0.4em 0 0.1em;
+  }
+  .md-typeset .signature-block {
+    margin-top: 1em;
+    break-inside: avoid;
   }
 
   /* Checkboxes: empty dark squares you can tick with a pen */

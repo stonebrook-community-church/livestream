@@ -2,7 +2,7 @@
 
 This page walks through a full service, one segment at a time. For each segment you'll see the scene, the presets, what to do and why. At the booth, use the one-page [Run Sheet](../reference/run-sheet.md). This page explains the reasons behind it.
 
-Scene numbers are Stream Deck buttons. "T-30" means 30 minutes before the service starts. If a word is new, see [Video Basics](video-basics.md).
+Scene numbers are Stream Deck buttons. A scene button only loads the scene into Ecamm's preview. It goes on air when you press **Publish**, the bottom-right button. "T-30" means 30 minutes before the service starts. If a word is new, see [Video Basics](video-basics.md).
 
 ## The whole service at a glance
 
@@ -35,17 +35,19 @@ Scene numbers are Stream Deck buttons. "T-30" means 30 minutes before the servic
 1. Arrive at the booth 60 minutes before the service.
 2. Work through the [Setup Checklist](../reference/setup-checklist.md) from the top.
 3. Recall every preset on both cameras and compare each one with the [Preset Map](../reference/preset-map.md).
-4. Press each Stream Deck button 1–9 and check that each scene looks right.
+4. Press each Stream Deck button 1–9 and check each scene in Ecamm's preview. Don't press **Publish** while you check.
 
 **Why an hour early:** an hour gives you time to find a problem and get it fixed before anyone is watching. Once Resi starts at T-30, everything you do is public.
 
-**Why check every preset:** a preset can be changed or a camera bumped during the week. Checking now means you won't find out halfway through a song. Also check that brightness and color look the same on every preset. If they don't, the [exposure](cameras-and-presets.md#exposure) needs fixing, so call the on-call tech lead.
+**Why check scenes in the preview:** the preview is off air, so you can look at every scene without putting it on the stream.
+
+**Why check every preset:** a preset can be changed or a camera bumped during the week. Checking now means you won't find out halfway through a song. Also check that brightness and color look the same on every preset. If they don't, the [exposure](cameras-and-presets.md#exposure) needs fixing, so find the tech lead.
 
 ## Before T-30: start broadcasting the Countdown
 
 **Scene:** Countdown (1). **Presets:** pre-position Cam 1 P2 and Cam 2 P2.
 
-1. Press **Countdown (1)**.
+1. Press **Countdown (1)**, then **Publish**.
 2. Start broadcasting in Ecamm.
 3. Recall **Cam 1 P2** and **Cam 2 P2**.
 
@@ -58,7 +60,7 @@ Scene numbers are Stream Deck buttons. "T-30" means 30 minutes before the servic
 **Scene:** Countdown (1). **Presets:** none to change.
 
 1. Don't press anything in Resi. It starts on its own.
-2. Check that the stream has started. If it hasn't started a few minutes after T-30, call the on-call tech lead.
+2. Check that the stream has started. If it hasn't started a few minutes after T-30, find the tech lead.
 3. Stay on Countdown until the first song starts.
 
 **Why automatic:** an automatic start happens on time even when you're busy with the setup checklist.
@@ -67,7 +69,7 @@ Scene numbers are Stream Deck buttons. "T-30" means 30 minutes before the servic
 
 **Scene:** Cam 1 + Lyrics (2) or Cam 2 + Lyrics (3). **Presets:** P1 or P2, either camera.
 
-1. When the music starts, press **Cam 1 + Lyrics (2)**. Cam 1 is already on Cam 1 P2.
+1. When the music starts, press **Cam 1 + Lyrics (2)**, then **Publish**. Cam 1 is already on Cam 1 P2.
 2. Cam 1 is now live. Cam 2 is off air and already on Cam 2 P2.
 3. When it's a good moment, cut to **Cam 2 + Lyrics (3)**.
 4. Now Cam 1 is off air. Recall Cam 1 P1 or Cam 1 P2 for the next cut.
@@ -83,9 +85,9 @@ Scene numbers are Stream Deck buttons. "T-30" means 30 minutes before the servic
 
 **Scene:** Cam 1 Clean (4), and Full Slide (6) when a slide is shown. **Presets:** Cam 1 P4.
 
-1. When the person doing announcements is in place, press **Cam 1 Clean (4)**.
-2. When ProPresenter shows an announcement slide, press **Full Slide (6)**.
-3. When the slide is gone, press **Cam 1 Clean (4)** again.
+1. When the person doing announcements is in place, press **Cam 1 Clean (4)**, then **Publish**.
+2. When ProPresenter shows an announcement slide, press **Full Slide (6)**, then **Publish**.
+3. When the slide is gone, press **Cam 1 Clean (4)** again, then **Publish**.
 4. While Cam 1 is live, recall **Cam 2 P1** on the off-air camera.
 
 **Why clean:** nobody is singing, so there are no lyrics to show. Viewers see the speaker with nothing in the way.
@@ -95,7 +97,7 @@ Scene numbers are Stream Deck buttons. "T-30" means 30 minutes before the servic
 **Get ready for next:** the Sunday school dismissal uses **Cam 1 P2**, but Cam 1 is live on P4. Don't move it while it's live. Use one of these two ways:
 
 - **If the last announcement is on Full Slide (6):** no camera is live, so recall Cam 1 P2 while the slide is up.
-- **If there's no slide:** cut to **Cam 2 Clean (5)** on Cam 2 P1. Recall Cam 1 P2, wait for it to settle, then press **Cam 1 Clean (4)**.
+- **If there's no slide:** cut to **Cam 2 Clean (5)** on Cam 2 P1. Recall Cam 1 P2, wait for it to settle, then press **Cam 1 Clean (4)** and **Publish**.
 
 Do this *before* the dismissal starts, so no slide is ever on air during it.
 
@@ -118,7 +120,7 @@ Do this *before* the dismissal starts, so no slide is ever on air during it.
 **Scene:** Break (8). **Presets:** Cam 2 P5 (blurred).
 
 1. When the break starts, check that Cam 2 has stopped moving on Cam 2 P5.
-2. Press **Break (8)**.
+2. Press **Break (8)**, then **Publish**.
 3. Cam 2 is live now. Cam 1 is off air. Recall **Cam 1 P3** for the sermon.
 
 **Why a blurred room:** the blur shows the room is still there without showing anyone clearly on a public stream. The countdown on the break slide tells viewers when the service starts again, so they don't leave.
@@ -131,10 +133,10 @@ Do this *before* the dismissal starts, so no slide is ever on air during it.
 
 **Scene:** Cam 1 Clean (4), switching to Sermon Split (7) when a slide is up. **Presets:** Cam 1 P3 and Cam 2 P3.
 
-1. When the preacher starts, press **Cam 1 Clean (4)**.
+1. When the preacher starts, press **Cam 1 Clean (4)**, then **Publish**.
 2. Cam 2 is off air. Recall **Cam 2 P3** and wait for it to settle.
-3. When a sermon slide goes up, press **Sermon Split (7)**.
-4. When the slide is gone, press **Cam 1 Clean (4)**.
+3. When a sermon slide goes up, press **Sermon Split (7)**, then **Publish**.
+4. When the slide is gone, press **Cam 1 Clean (4)**, then **Publish**.
 5. Repeat steps 3 and 4 for every slide. Don't move either camera during the sermon.
 
 **Why Cam 1 Clean as the main shot:** Cam 1 sees the preacher straight on, like a person sitting in the room.
@@ -161,7 +163,7 @@ Do this *before* the dismissal starts, so no slide is ever on air during it.
 **Scene:** Cam 2 Clean (5). **Presets:** Cam 2 P4.
 
 1. When communion starts, check that Cam 2 has stopped moving on Cam 2 P4.
-2. Press **Cam 2 Clean (5)**.
+2. Press **Cam 2 Clean (5)**, then **Publish**.
 3. Cam 1 is off air. Recall **Cam 1 P1** for the benediction.
 
 **Why:** Cam 2 sees the communion table from the side, close enough to fill the frame. Clean keeps the quiet moment uncovered. See [rule 5](rules.md#5-communion-cam-2-clean-cam-2-p4).
@@ -171,7 +173,7 @@ Do this *before* the dismissal starts, so no slide is ever on air during it.
 **Scene:** TBD. Proposed: Cam 1 Clean (4). **Presets:** Cam 1 P1.
 
 1. Check that Cam 1 is on Cam 1 P1 and has stopped moving.
-2. Press **Cam 1 Clean (4)**.
+2. Press **Cam 1 Clean (4)**, then **Publish**.
 
 **Why (proposed):** the benediction is the blessing that closes the service. A clean wide shot shows the whole stage for that closing moment. This shot is not confirmed yet. Follow your trainer until it is.
 
@@ -179,7 +181,7 @@ Do this *before* the dismissal starts, so no slide is ever on air during it.
 
 **Scene:** End Slate (9). **Presets:** none.
 
-1. Right after the benediction, press **End Slate (9)**.
+1. Right after the benediction, press **End Slate (9)**, then **Publish**.
 2. Leave it on air.
 
 **Why:** the End Slate tells viewers the service is over. It is a still graphic, so nothing on screen changes while people finish watching.

@@ -25,13 +25,13 @@ Times are targets. "T-30" means 30 minutes before the service starts. Logins are
 
 **T-45 — Scenes** ([Stream Deck](stream-deck.md))
 
-- [ ] Press each Stream Deck button **1–9**. Each scene matches the Stream Deck sheet.
+- [ ] Press each Stream Deck button **1–9**. Each scene in Ecamm's preview matches the Stream Deck sheet. Don't press **Publish** yet.
 - [ ] Ask the ProPresenter operator to show a lyric and a slide. Check both appear in Ecamm.
 - [ ] Lyrics sit in the lower third, not full screen.
 
 **T-35 — Go to Countdown**
 
-- [ ] Press **Countdown (1)**.
+- [ ] Press **Countdown (1)**, then **Publish**. Countdown is in the program.
 - [ ] Start broadcasting in Ecamm.
 - [ ] Pre-position **Cam 1 P2** and **Cam 2 P2** for the first song.
 
@@ -41,10 +41,10 @@ Times are targets. "T-30" means 30 minutes before the service starts. Logins are
 
 ## End of service
 
-- [ ] After the benediction, press **End Slate (9)**.
+- [ ] After the benediction, press **End Slate (9)**, then **Publish**.
 - [ ] Leave End Slate on air. Don't rely on Resi's 1-hour auto-end. It is only a fallback for special events.
 - [ ] **Service end +5 min: manually end Resi stream.** Only after that, stop broadcasting in Ecamm.
 
 <div class="photo-placeholder">PHOTO NEEDED: booth.jpg</div>
 
-Something not working? Call the on-call tech lead. Why each step: [Sunday Flow](../onboarding/sunday-flow.md).
+Something not working? Find the tech lead. Why each step: [Sunday Flow](../onboarding/sunday-flow.md).

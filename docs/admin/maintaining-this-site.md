@@ -1,3 +1,130 @@
 # Maintaining This Site
 
-How to edit pages, swap placeholder images for real photos, and print.
+This page is for whoever keeps the site up to date. You don't need to install anything. Every change below can be made in your web browser on GitHub. You need a GitHub account with write access to the church's repository. Ask the Livestream Lead.
+
+!!! danger "This site is public"
+    Anyone on the internet can read it. Never add phone numbers, names with contact details, logins, passwords, stream keys or IP addresses. Write "find the tech lead" instead. Contact details belong on the private printed booth card.
+
+## How the site works
+
+- Every page is a text file in the `docs/` folder on GitHub. The files are written in **Markdown**, plain text with a few symbols for formatting (see the [cheat sheet](#markdown-cheat-sheet) below).
+- When you save a change to the `main` branch, GitHub rebuilds the site. The new version is live about a minute later.
+- If your change breaks the build, the live site stays as it was. Nothing goes down.
+
+## Edit a page
+
+1. Open the page on this site.
+2. Click the **Edit this page** icon (a pencil) at the top right of the page. GitHub opens the file in its editor.
+3. Make your change. Use the **Preview** tab to check it.
+4. Click **Commit changes**. Write a short message, for example "Fill in Cam 1 exposure values".
+5. Choose **Commit directly to the main branch** and click **Commit changes** again.
+6. Open the **Actions** tab on GitHub. Wait for the run to show a green check.
+7. Reload the page on the site and check your change.
+
+If the run shows a red cross, click it to see the error. The most common cause is a broken link, for example a page that was renamed. Fix the file and commit again.
+
+!!! tip "Use the exact same names"
+    Write presets and scenes exactly as they appear on the Stream Deck and SuperJoy labels: `Cam 1 P3`, `Cam 2 P5`, `Scene 7 — Sermon Split` (with a long dash). A volunteer at the booth looks for the exact words on the button.
+
+### Add, rename or remove a page
+
+The menu on the left comes from the `nav:` list in `mkdocs.yml`, at the top of the repository.
+
+1. Add, rename or delete the file under `docs/`. On GitHub, use **Add file → Create new file**. Type the folder and name, for example `docs/onboarding/guest-speaker.md`.
+2. Open `mkdocs.yml` and edit the `nav:` list to match. Copy the indentation of the lines around it exactly.
+3. Search the other pages for links to a renamed or removed page and fix them.
+
+### Values that aren't known yet
+
+The site describes the **target** setup. Some values, like the camera exposure settings, aren't decided yet and say **TBD**. When a value is confirmed, replace every `TBD` for it. Use GitHub's search (press `/` on the repository page) to find them all. Never guess a value to fill a gap.
+
+## Replace a PHOTO NEEDED placeholder
+
+The pictures on this site are drawings for now. Under each drawing is a gray box like this:
+
+<div class="photo-placeholder">PHOTO NEEDED: example.jpg</div>
+
+The box names the photo it is waiting for. The real photo goes **under** the drawing. The drawing stays.
+
+### 1. Take the photo
+
+- **Presets and scenes:** take a screenshot of the program output in Ecamm Live, so it shows exactly what viewers see. Recall the preset or press the scene button first.
+- **Equipment** (booth, SuperJoy, Stream Deck): a phone photo is fine. Hold the phone level and fill the frame with the equipment.
+
+Before you save it, check:
+
+- [ ] No screen in the picture shows a login, password, stream key or IP address. Crop it out or take the picture again.
+- [ ] No member of the congregation can be clearly recognized. Shots of the stage are fine.
+- [ ] It is a `.jpg`, no wider than 1920 pixels, and smaller than about 500 KB.
+
+### 2. Upload the photo
+
+1. Rename the file to the **exact** name in the gray box, for example `cam1-p3.jpg`. Use lowercase.
+2. On GitHub, open the `docs/assets/photos/` folder.
+3. Click **Add file → Upload files** and drop the photo in.
+4. Commit directly to the `main` branch.
+
+### 3. Swap the placeholder for the photo
+
+1. Open the page with the gray box and click **Edit this page**.
+2. Find the line with the box:
+    ```html
+    <div class="photo-placeholder">PHOTO NEEDED: cam1-p3.jpg</div>
+    ```
+3. Replace that whole line with:
+    ```markdown
+    ![Real frame: Cam 1 P3](../assets/photos/cam1-p3.jpg)
+    ```
+    The text in square brackets describes the photo for people who can't see it. Keep the same filename.
+4. On a **booth reference sheet** (under Booth Reference), keep the photo small so the sheet still fits on one page. Add a width:
+    ```markdown
+    ![Real frame: SuperJoy](../assets/photos/superjoy.jpg){ width="300" }
+    ```
+5. Commit, wait for the green check, and look at the page.
+
+The `../` at the start of the path means "go up one folder". It is right for every page inside a folder, like `onboarding/` or `reference/`. On the Home page (`docs/index.md`), leave out the `../`.
+
+### Change a drawing
+
+The drawings are generated by a script, `scripts/build_diagrams.py`. Don't edit the `.svg` files directly, because the next run of the script overwrites them. Changing a drawing needs the script and a computer set up for it. Ask whoever maintains the repository, or ask Claude (the repository's `CLAUDE.md` file explains the rules).
+
+## Print a page
+
+Print the [Booth Reference](../reference/index.md) sheets for the booth, and one [Skills Checklist](../training/skills-checklist.md) per new volunteer.
+
+1. Open the page on the site.
+2. Press **Ctrl+P** (**Cmd+P** on a Mac).
+3. Check these settings in the print window:
+    - **Paper size:** Letter
+    - **Scale:** 100% (or Default)
+    - **Headers and footers:** off
+    - **Color:** black and white is fine. Every drawing is grayscale.
+4. Look at the preview. A booth reference sheet must be **one page**.
+5. Print.
+
+The site hides the menu, header and search when it prints. Guide pages print the web address after each outside link, so the link still works on paper. Booth sheets leave the addresses out to save space.
+
+!!! tip "Check the print preview after a big change"
+    If you add to a booth reference sheet, open the print preview before you commit. If it spills onto a second page, shorten the text. Don't shrink the scale. Move the explanation to the onboarding guide and link to it.
+
+## Markdown cheat sheet
+
+| You type | You get |
+|---|---|
+| `**Countdown (1)**` | **Countdown (1)** |
+| `## Section title` | A section heading |
+| `1. First step` on one line, `2. Next step` on the next | A numbered list |
+| `- Item` | A bullet list |
+| `- [ ] Check the presets` | A checkbox |
+| `[Preset Map](../reference/preset-map.md)` | A link to another page |
+
+A callout box looks like this. The text under the first line must start with four spaces:
+
+```markdown
+!!! tip "A good habit"
+    Recall P1 whenever you are unsure.
+```
+
+Use `!!! danger` only for the two danger rules: "only move the camera that isn't live" and "no slides during Sunday school dismissal". Use `!!! tip` for good habits.
+
+For more, see GitHub's guide to [basic Markdown formatting](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).

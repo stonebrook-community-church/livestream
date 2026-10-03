@@ -9,7 +9,7 @@ Every operator follows these six rules, every Sunday. Each rule below says what 
 | 3 | During songs, switch at your judgment, using P1 and P2 on both cameras. |
 | 4 | Sunday school dismissal: never show slides. Use Cam 1 Clean, Cam 1 P2. |
 | 5 | Communion: Cam 2 Clean, Cam 2 P4. |
-| 6 | Problems: call the on-call tech lead. |
+| 6 | Problems: find the tech lead. |
 
 ## 1. Only move the camera that isn't live
 
@@ -22,7 +22,7 @@ Every operator follows these six rules, every Sunday. Each rule below says what 
 2. On the SuperJoy, select the other camera, the **off-air** one.
 3. Recall the preset you need.
 4. Wait until the camera stops moving completely.
-5. Press the scene button for that camera.
+5. Press the scene button for that camera, check the preview, then press **Publish**.
 
 Not sure which camera is live? See the table on [Video Basics](video-basics.md#program-and-preview).
 
@@ -83,18 +83,18 @@ During songs, you decide when to switch. Use only P1 and P2, on both cameras, an
 
 Communion happens once a month. Use Scene 5 — Cam 2 Clean on Cam 2 P4.
 
-**How:** while Cam 1 is live in the part before communion, recall Cam 2 P4. Wait for it to settle, then press Scene 5 — Cam 2 Clean.
+**How:** while Cam 1 is live in the part before communion, recall Cam 2 P4. Wait for it to settle, then press Scene 5 — Cam 2 Clean and **Publish**.
 
 **Why Cam 2:** the communion table is on the floor in front of the stage. From the back, Cam 1 sees it small at the bottom of the frame. Cam 2 sees it from the side, close enough to fill the frame with the table.
 
 **Why clean:** communion is a quiet moment. Nothing should cover the picture, and there are no lyrics to show.
 
-## 6. Problems: call the on-call tech lead
+## 6. Problems: find the tech lead
 
-If something breaks and a scene button can't fix it, call the **on-call tech lead**. Their contact details are on the **private booth card** at the booth. They are never on this site.
+If something breaks and a scene button can't fix it, find the **tech lead**. They are usually at church on Sunday. If they aren't, their contact details are on the **private booth card** at the booth. They are never on this site.
 
-**How:** first go to a safe scene, then call. The steps are on [When Things Go Wrong](when-things-go-wrong.md).
+**How:** first go to a safe scene, then find the tech lead. The steps are on [When Things Go Wrong](when-things-go-wrong.md).
 
-**Why call instead of fixing it yourself:** you are running the stream alone. If you start trying fixes, nobody is watching the program, and a guess can make things worse. The tech lead knows the system and can often fix the problem over the phone while you keep the stream steady.
+**Why get help instead of fixing it yourself:** you are running the stream alone. If you start trying fixes, nobody is watching the program, and a guess can make things worse. The tech lead knows the system and can often fix the problem quickly while you keep the stream steady.
 
 **Why the contact details aren't on this site:** this site is public. Anyone on the internet can read it. Phone numbers, logins and stream keys on a public page could be misused, for example by someone streaming to our channel. They belong on the printed booth card only.
