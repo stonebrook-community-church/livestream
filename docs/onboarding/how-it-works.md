@@ -57,7 +57,7 @@ The full timeline is on the [Sunday Flow](sunday-flow.md) page.
 |---|---|
 | SuperJoy (camera presets) | Audio mixer and sound settings |
 | Stream Deck (scenes) | The ProPresenter computer |
-| Ecamm Live (start and stop broadcasting) | Saved presets and scene layouts (the Livestream Lead changes these) |
+| Ecamm Live (scene management) | Saved presets and scene layouts (the Livestream Lead changes these) |
 | Resi (end the stream) | Camera menus and exposure settings |
 
 !!! tip "Not sure who owns a problem?"
