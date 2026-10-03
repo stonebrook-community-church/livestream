@@ -99,6 +99,10 @@
   .reference-sheet h1 {
     margin-bottom: 0.5em;
   }
+  .reference-sheet table:not([class]) td,
+  .reference-sheet table:not([class]) th {
+    padding: 0.35em 0.6em;
+  }
 
   /* Placeholders waste ink; shrink them on paper */
   .md-typeset .photo-placeholder {

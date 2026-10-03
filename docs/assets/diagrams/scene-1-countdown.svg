@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-labelledby="t d" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<title id="t">Scene 1 — Countdown: ProPresenter Slides, full screen (countdown)</title>
+<desc id="d">Mock 16:9 program frame for Scene 1 — Countdown: ProPresenter Slides, full screen (countdown).</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/></marker>
+<marker id="arrow-mid" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#808080"/></marker>
+<filter id="blur" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="12"/></filter>
+<clipPath id="frame"><rect width="960" height="540"/></clipPath>
+</defs>
+<rect width="960" height="540" fill="#ffffff"/><g clip-path="url(#frame)"><rect width="960" height="540" fill="#e0e0e0"/><rect x="40" y="76" width="880" height="424" rx="10" fill="none" stroke="#808080" stroke-width="2"/><text x="480.0" y="200" font-size="36" font-weight="bold" fill="#1a1a1a" text-anchor="middle" >Countdown slide</text><text x="480.0" y="342" font-size="120" font-weight="bold" fill="#1a1a1a" text-anchor="middle" >04:59</text><rect x="593" y="482" width="351" height="34" rx="6" fill="#ffffff" fill-opacity="0.94" stroke="#1a1a1a" stroke-width="1.5"/><text x="605.3" y="503" font-size="18" font-weight="normal" fill="#1a1a1a" text-anchor="start" >ProPresenter Slides — full screen</text></g><rect x="16" y="16" width="258" height="40" rx="6" fill="#1a1a1a"/><text x="30" y="44" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="start" >Scene 1 — Countdown</text><rect x="1.5" y="1.5" width="957" height="537" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+</svg>
