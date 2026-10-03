@@ -1,0 +1,108 @@
+/* ---------- Photo placeholders ----------
+   <div class="photo-placeholder">PHOTO NEEDED: cam1-p3.jpg</div>
+   Replace with a real image once the photo exists in docs/assets/photos/. */
+.md-typeset .photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  max-width: 32rem;
+  margin: 1em auto;
+  padding: 1em;
+  border: 2px dashed var(--md-default-fg-color--light);
+  border-radius: 0.2rem;
+  background: var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color--light);
+  font-family: var(--md-code-font-family);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Reference sheets (template: reference.html) ---------- */
+.reference-sheet .md-typeset,
+.md-typeset .reference-sheet {
+  font-size: 0.9rem;
+}
+.reference-sheet table:not([class]) {
+  font-size: 0.85rem;
+}
+
+/* ---------- Print ---------- */
+@page {
+  size: letter;
+  margin: 0.5in;
+}
+
+@media print {
+  /* Chrome: header, nav, footer, search, edit buttons */
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-search,
+  .md-footer,
+  .md-top,
+  .md-content__button,
+  .md-source,
+  .headerlink {
+    display: none !important;
+  }
+
+  .md-main__inner,
+  .md-content,
+  .md-content__inner {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  /* Let wide tables print instead of scrolling */
+  .md-typeset__scrollwrap,
+  .md-typeset__table {
+    overflow: visible !important;
+    display: block;
+  }
+
+  /* Keep these together on one page */
+  .md-typeset table,
+  .md-typeset tr,
+  .md-typeset figure,
+  .md-typeset img,
+  .md-typeset svg,
+  .md-typeset .admonition,
+  .md-typeset details,
+  .md-typeset .photo-placeholder {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Guide pages: print external link URLs */
+  .md-typeset a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    word-break: break-all;
+  }
+
+  /* Reference sheets: no URLs, tighter spacing to fit one Letter page */
+  .reference-sheet a[href^="http"]::after {
+    content: none;
+  }
+  .reference-sheet h1 {
+    margin-bottom: 0.5em;
+  }
+
+  /* Placeholders waste ink; shrink them on paper */
+  .md-typeset .photo-placeholder {
+    max-width: 3in;
+    background: none;
+  }
+}

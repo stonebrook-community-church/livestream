@@ -1,0 +1,32 @@
+{
+  "name": "Livestream Training Site",
+  // Python 3.12 matches the GitHub Actions build.
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+  // pip installs to ~/.local because the image's Python is root-owned.
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/home/vscode/.local/bin"
+  },
+  "postCreateCommand": "pip install --user --no-warn-script-location -r requirements.txt",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "MkDocs preview",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.vscode-yaml",
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint"
+      ],
+      "settings": {
+        "yaml.schemas": {
+          "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+        },
+        "files.trimTrailingWhitespace": true
+      }
+    }
+  }
+}

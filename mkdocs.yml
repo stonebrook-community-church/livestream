@@ -1,0 +1,77 @@
+site_name: Livestream Volunteer Training
+site_description: Training and booth reference for the Stonebrook Community Church livestream team.
+# If the repo is renamed (e.g. to livestream-training), update site_url and repo_url.
+site_url: https://stonebrook-community-church.github.io/livestream/
+repo_url: https://github.com/stonebrook-community-church/livestream
+repo_name: livestream
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+
+plugins:
+  - search
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - toc:
+      permalink: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: index.md
+  - Onboarding:
+      - onboarding/index.md
+      - How It Works: onboarding/how-it-works.md
+      - Video Basics: onboarding/video-basics.md
+      - Cameras and Presets: onboarding/cameras-and-presets.md
+      - Scenes: onboarding/scenes.md
+      - Sunday Flow: onboarding/sunday-flow.md
+      - Operating Rules: onboarding/rules.md
+      - When Things Go Wrong: onboarding/when-things-go-wrong.md
+  - Booth Reference:
+      - Preset Map: reference/preset-map.md
+      - Stream Deck: reference/stream-deck.md
+      - Run Sheet: reference/run-sheet.md
+      - Setup Checklist: reference/setup-checklist.md
+  - Training:
+      - Skills Checklist: training/skills-checklist.md
+  - Post-Production: post-production.md
+  - Admin:
+      - Maintaining This Site: admin/maintaining-this-site.md
+      - Backlog: admin/backlog.md
