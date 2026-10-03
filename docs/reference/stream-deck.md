@@ -9,7 +9,7 @@ hide:
 
 <div class="grid" markdown>
 
-![15-key Stream Deck. Top row: 1 Countdown, 2 Cam 1 + Lyrics, 3 Cam 2 + Lyrics, 4 Cam 1 Clean, 5 Cam 2 Clean. Second row: 6 Full Slide, 7 Sermon Split, 8 Break, 9 End Slate, then empty. Third row: all empty.](../assets/diagrams/stream-deck.svg)
+![15-key Stream Deck. Top row: 1 Countdown, 2 Cam 1 + Lyrics, 3 Cam 2 + Lyrics, 4 Cam 1 Clean, 5 Cam 2 Clean. Second row: 6 Full Slide, 7 Sermon Split, 8 Break, 9 End Slate, then empty. Third row: empty, except Publish at the far right.](../assets/diagrams/stream-deck.svg)
 
 <div class="photo-placeholder">PHOTO NEEDED: stream-deck.jpg</div>
 
@@ -26,11 +26,14 @@ hide:
 | 7 | Sermon Split | Cam 2 P3 (subject left) + slide on the right | Sermon, when a slide is up |
 | 8 | Break | Cam 2 P5 blurred + break slide with countdown | 5-min break |
 | 9 | End Slate | Closing graphic | End of service |
+| Bottom right | **Publish** | Puts the scene in the preview on air | After every scene button |
+
+**Every scene takes two presses:** the scene button loads it into Ecamm's preview, then **Publish** puts it on air. Picture didn't change? Press Publish.
 
 !!! danger "Sunday school dismissal: never show slides"
     Use **Cam 1 Clean (4)** on **Cam 1 P2**. Do not press 6 or 7.
 
 !!! tip "Stuck?"
-    Go to a safe scene: **Countdown (1)**, **Full Slide (6)**, or **Cam 1 Clean (4)** on **Cam 1 P1**. Then call the on-call tech lead.
+    Go to a safe scene: **Countdown (1)**, **Full Slide (6)**, or **Cam 1 Clean (4)** on **Cam 1 P1**, then **Publish**. Then find the tech lead.
 
 Pictures of every scene: [Scenes](../onboarding/scenes.md).

@@ -34,7 +34,8 @@ To recall a preset:
 2. On the SuperJoy, select the **other** camera, the one that is off air.
 3. Press the preset number.
 4. Wait until the camera stops moving.
-5. Press the scene button on the Stream Deck to cut to that camera.
+5. Press the scene button on the Stream Deck. Check the scene in Ecamm's preview.
+6. Press **Publish** to cut to that camera.
 
 <div class="photo-placeholder">PHOTO NEEDED: superjoy.jpg</div>
 
@@ -64,7 +65,7 @@ Why fixed exposure:
 - **The two cameras need to match.** If one camera looks warmer or darker than the other, every cut between them is obvious.
 - **It works around a known camera difference.** One of our cameras stores exposure with each preset. The other keeps whatever exposure it currently has. Saving the same fixed values into every preset makes both behave the same way.
 
-You don't change exposure. During the setup checklist, you check that brightness and color look the same on every preset. If they don't, call the on-call tech lead before the service.
+You don't change exposure. During the setup checklist, you check that brightness and color look the same on every preset. If they don't, find the tech lead before the service.
 
 ## Cam 1 presets (center)
 
@@ -139,8 +140,8 @@ You don't change exposure. During the setup checklist, you check that brightness
 ### Cam 2 P3 — Pulpit, full body, subject framed left
 
 <figure markdown="span">
-  ![Cam 2 P3: The preacher's full body on the left third of the frame. The right side is empty.](../assets/diagrams/cam2-p3.svg)
-  <figcaption>The preacher stands on the left third. The right side stays empty because the slide goes there in Scene 7 — Sermon Split.</figcaption>
+  ![Cam 2 P3: The preacher's full body on the left, with the pulpit on the left third line. The right side is empty, with a 16:9 box marked for the slide.](../assets/diagrams/cam2-p3.svg)
+  <figcaption>The pulpit sits on the left third line, with the preacher just left of it. The right side stays empty because the slide goes there in Scene 7 — Sermon Split.</figcaption>
 </figure>
 
 <div class="photo-placeholder">PHOTO NEEDED: cam2-p3.jpg</div>

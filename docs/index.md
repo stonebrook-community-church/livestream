@@ -33,4 +33,4 @@ The guide explains *why*. The sheets tell you *what to do next*.
 - **The pictures are drawings for now.** Gray boxes that say "PHOTO NEEDED" will be replaced with real photos from the booth.
 
 !!! tip "Something wrong on a Sunday?"
-    Go to a safe scene and call the on-call tech lead. See [When Things Go Wrong](onboarding/when-things-go-wrong.md).
+    Go to a safe scene and find the tech lead. See [When Things Go Wrong](onboarding/when-things-go-wrong.md).

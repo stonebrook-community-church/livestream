@@ -8,11 +8,24 @@ A **scene** is a complete picture built in Ecamm Live. One Stream Deck button gi
 
 Each scene is already built: the right camera, the right overlay, in the right place. You never add or remove parts of a scene during the service. You press one button and get the whole picture.
 
-This keeps every Sunday the same. It also means that one button press can't leave a half-built picture on air.
+This keeps every Sunday the same. It also means you can't leave a half-built picture on air.
+
+## Scene button, then Publish
+
+A scene button doesn't put the scene on air by itself. It loads the scene into Ecamm's **preview**, which viewers don't see. To put it on air:
+
+1. Press the scene button.
+2. Check the scene in the preview.
+3. Press **Publish**, the bottom-right button.
+
+If the preview looks wrong, press a different scene button. Nothing changes on air until you press Publish. See [Program and preview](video-basics.md#program-and-preview).
+
+!!! tip "The picture didn't change?"
+    You probably pressed the scene button but not Publish. Check the preview, then press Publish.
 
 <figure markdown="span">
-  ![15-key Stream Deck. Top row: 1 Countdown, 2 Cam 1 + Lyrics, 3 Cam 2 + Lyrics, 4 Cam 1 Clean, 5 Cam 2 Clean. Second row: 6 Full Slide, 7 Sermon Split, 8 Break, 9 End Slate, then empty. Third row: all empty.](../assets/diagrams/stream-deck.svg)
-  <figcaption>The Stream Deck. Scenes 1–5 are on the top row and 6–9 on the second row. The other buttons stay empty on purpose, so you can't press something unexpected.</figcaption>
+  ![15-key Stream Deck. Top row: 1 Countdown, 2 Cam 1 + Lyrics, 3 Cam 2 + Lyrics, 4 Cam 1 Clean, 5 Cam 2 Clean. Second row: 6 Full Slide, 7 Sermon Split, 8 Break, 9 End Slate, then empty. Third row: empty, except Publish at the far right.](../assets/diagrams/stream-deck.svg)
+  <figcaption>The Stream Deck. Scenes 1–5 are on the top row and 6–9 on the second row. <strong>Publish</strong> is the bottom-right button. The other buttons stay empty on purpose, so you can't press something unexpected.</figcaption>
 </figure>
 
 <div class="photo-placeholder">PHOTO NEEDED: stream-deck.jpg</div>
@@ -28,7 +41,7 @@ Before you press a camera scene, make sure that camera is already on the right p
 
 <div class="photo-placeholder">PHOTO NEEDED: scene-1-countdown.jpg</div>
 
-- **Use it:** from when you start broadcasting until the first song. It must be on air before T-30, when Resi starts by itself.
+- **Use it:** from when you start broadcasting until the first song. Press it, then Publish, before you start broadcasting. It must be on air before T-30, when Resi starts by itself.
 - **Don't use it:** once the service has started. If something breaks mid-service, use a safe scene from [When Things Go Wrong](when-things-go-wrong.md) instead.
 - **Live camera:** none. Both cameras are free to move.
 

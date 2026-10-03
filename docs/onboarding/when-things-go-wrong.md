@@ -5,8 +5,8 @@ Something will go wrong one day. That's normal, and it isn't your fault. You don
 ## The three steps
 
 1. **Stay calm.** Viewers at home forgive a few seconds of a still shot. They notice panic: a camera swinging around or scenes flashing.
-2. **Go to a safe scene.** Pick one from the table below.
-3. **Call the on-call tech lead.** Their contact details are on the **private booth card** at the booth.
+2. **Go to a safe scene.** Pick one from the table below. Press its button, then **Publish**.
+3. **Find the tech lead.** They are usually at church on Sunday. If they aren't, their contact details are on the **private booth card** at the booth.
 
 !!! danger "Only move the camera that isn't live"
     This rule still applies when something is wrong. Cut away first, then fix the camera that is off air.
@@ -30,8 +30,8 @@ P1 is the wide shot on both cameras, so it is never wrong. If Cam 1 P1 is alread
 |---|---|
 | Wrong lyrics or slide | The ProPresenter operator |
 | Sound is missing, too loud or too quiet | The audio team. You don't adjust audio. |
-| Picture, stream, Ecamm, Resi, cameras, Stream Deck or SuperJoy | The on-call tech lead |
-| Not sure | The on-call tech lead |
+| Picture, stream, Ecamm, Resi, cameras, Stream Deck or SuperJoy | The tech lead |
+| Not sure | The tech lead |
 
 ## Don't
 

@@ -7,7 +7,7 @@ hide:
 
 # Run Sheet
 
-Tick each segment as you go. Scene numbers are Stream Deck buttons.
+Tick each segment as you go. Scene numbers are Stream Deck buttons. **Press the scene button, then Publish** (bottom right).
 
 | Time / Segment | Scene (Btn) | Camera preset(s) |
 |---|---|---|
@@ -32,6 +32,6 @@ Tick each segment as you go. Scene numbers are Stream Deck buttons.
     Stay on Cam 1 Clean (4), Cam 1 P2.
 
 - **Songs:** switch at your judgment, using P1 and P2 on both cameras. Lyrics stay in the lower third, never full screen.
-- **Something wrong?** Go to Countdown (1), Full Slide (6) or Cam 1 Clean (4) on Cam 1 P1, then call the on-call tech lead.
+- **Something wrong?** Go to Countdown (1), Full Slide (6) or Cam 1 Clean (4) on Cam 1 P1, then Publish. Then find the tech lead.
 
 Why each step: [Sunday Flow](../onboarding/sunday-flow.md).

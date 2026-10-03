@@ -18,10 +18,11 @@ When you add, rename or remove a page, update `nav:` in `mkdocs.yml`.
 
 ## Hard rules
 
-- **No personal or sensitive info, ever.** That means no phone numbers, names with contact details, logins, passwords, stream keys or IP addresses. Contacts live on the private printed booth card. Write "call the on-call tech lead".
+- **No personal or sensitive info, ever.** That means no phone numbers, names with contact details, logins, passwords, stream keys or IP addresses. Contacts live on the private printed booth card. Write "find the tech lead" (they are usually at church on Sunday).
 - **Use the exact same names everywhere.** These strings must match the Stream Deck and SuperJoy labels:
   - Presets: `Cam 1 P3`, `Cam 2 P5` (Cam 1 = center, Cam 2 = left side when facing the stage). P1 is always the safe wide shot.
   - Scenes: `Scene 7 — Sermon Split` (em dash). The scene list: 1 Countdown, 2 Cam 1 + Lyrics, 3 Cam 2 + Lyrics, 4 Cam 1 Clean, 5 Cam 2 Clean, 6 Full Slide, 7 Sermon Split, 8 Break, 9 End Slate.
+  - `Publish`: the bottom-right Stream Deck button. A scene button only loads the scene into Ecamm's preview. Publish puts it on air. Every step that puts a scene on air says so: "press **Cam 1 Clean (4)**, then **Publish**".
 - The docs describe the **target** setup. Don't invent values that aren't known yet, such as exposure settings or resolution. Write `TBD` instead.
 
 ## Pictures
