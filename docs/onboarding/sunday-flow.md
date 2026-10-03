@@ -109,7 +109,7 @@ Do this *before* the dismissal starts, so no slide is ever on air during it.
 1. Stay on **Cam 1 Clean (4)** for the whole dismissal.
 2. While Cam 1 is live, recall **Cam 2 P5** on the off-air camera for the break.
 
-**Why:** the slides at this moment are for the families in the room, not for viewers. The medium shot keeps the children walking out of the room off a public stream. See [rule 4](rules.md#4-sunday-school-dismissal-never-show-slides).
+**Why:** the slides at this moment are for the families in the room, not for viewers. Cam 1 P2 frames only the stage, so the children walking out of the room stay off a public stream. See [rule 4](rules.md#4-sunday-school-dismissal-never-show-slides).
 
 **Get ready for next:** Cam 2 is now on Cam 2 P5, ready for the break.
 

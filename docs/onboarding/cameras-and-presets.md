@@ -82,8 +82,8 @@ You don't change exposure. During the setup checklist, you check that brightness
 ### Cam 1 P2 — Worship leader, medium
 
 <figure markdown="span">
-  ![Cam 1 P2: The worship leader from the waist up, centered, with a little headroom.](../assets/diagrams/cam1-p2.svg)
-  <figcaption>A medium shot: waist up. Leave a small gap of headroom above the head.</figcaption>
+  ![Cam 1 P2: Three people head to toe: a vocalist on the left, the worship leader in the center and the keyboard player on the right.](../assets/diagrams/cam1-p2.svg)
+  <figcaption>A medium shot: the worship leader in the center, with the vocalist and keys on either side, head to toe. Everyone fits inside the left and right edges.</figcaption>
 </figure>
 
 <div class="photo-placeholder">PHOTO NEEDED: cam1-p2.jpg</div>

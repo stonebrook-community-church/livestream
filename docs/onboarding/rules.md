@@ -77,7 +77,7 @@ During songs, you decide when to switch. Use only P1 and P2, on both cameras, an
 **Why:**
 
 - **The slides at this moment are for the room, not for viewers.** Whatever ProPresenter shows during the dismissal is meant for the children and families in the room.
-- **A tight shot keeps the children off the stream.** The stream is public. Cam 1 P2 is a medium shot of the person on stage, so children walking out of the room stay out of the picture.
+- **A stage-only shot keeps the children off the stream.** The stream is public. Cam 1 P2 frames only the people on stage, so children walking out of the room stay out of the picture.
 
 ## 5. Communion: Cam 2 Clean, Cam 2 P4
 

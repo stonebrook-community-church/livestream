@@ -196,7 +196,11 @@ def view_cam1_p1():
 
 
 def view_cam1_p2():
-    return front_stage(470, 520) + person(480, 70, 980) + mic_stand(560, 210, 560, 1.4)
+    """Vocalist (left), worship leader (center) and keys player (right), head to toe."""
+    return (front_stage(380, 460)
+            + person(230, 125, 300) + mic_stand(262, 165, 425, 1.0)
+            + person(480, 100, 330) + mic_stand(515, 140, 430, 1.0)
+            + person(730, 125, 300) + keyboard(730, 288, 1.25))
 
 
 def view_cam1_p3():
@@ -255,7 +259,7 @@ PRESETS = [
     ("cam1-p1.svg", "Cam 1 P1", "Full stage wide (safe shot)", view_cam1_p1,
      chip(944, 482, "Whole stage in frame — the safe shot", anchor="end")),
     ("cam1-p2.svg", "Cam 1 P2", "Worship leader, medium", view_cam1_p2,
-     headroom(640, 70) + chip(944, 482, "Medium: waist up", anchor="end")),
+     headroom(580, 100) + chip(944, 482, "Medium: three people, head to toe", anchor="end")),
     ("cam1-p3.svg", "Cam 1 P3", "Pulpit, upper body (sermon front)", view_cam1_p3,
      headroom(640, 85) + chip(944, 482, "Upper body: chest up, behind pulpit", anchor="end")),
     ("cam1-p4.svg", "Cam 1 P4", "Announcements spot", view_cam1_p4,
@@ -659,7 +663,7 @@ def build_glossary():
     (OUT / "glossary-preset.svg").write_text(svg(
         w, h, "Presets",
         "Four numbered buttons, 1 to 4, each with an arrow down to a small frame: Cam 1 P1 full stage wide, "
-        "Cam 1 P2 worship leader, Cam 1 P3 pulpit, Cam 1 P4 announcements spot.", d))
+        "Cam 1 P2 worship leader with vocalist and keys, Cam 1 P3 pulpit, Cam 1 P4 announcements spot.", d))
 
 
 if __name__ == "__main__":

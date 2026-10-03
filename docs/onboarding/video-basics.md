@@ -16,8 +16,8 @@ The **shot size** says how much of the person or the stage fills the frame.
 </figure>
 
 <figure markdown="span">
-  ![Medium shot: one person from the waist up.](../assets/diagrams/cam1-p2.svg)
-  <figcaption><strong>Medium:</strong> one person, waist up. Cam 1 P2.</figcaption>
+  ![Medium shot: three people on stage, head to toe.](../assets/diagrams/cam1-p2.svg)
+  <figcaption><strong>Medium:</strong> a few people, head to toe. Cam 1 P2.</figcaption>
 </figure>
 
 <figure markdown="span">
@@ -28,7 +28,7 @@ The **shot size** says how much of the person or the stage fills the frame.
 </div>
 
 - **Wide shot:** shows the whole scene. Viewers see where everyone is. It is the safest shot, because nothing important is ever out of frame.
-- **Medium shot:** one person from about the waist up. Viewers can see faces and gestures.
+- **Medium shot:** closer than wide, showing part of the stage. Ours shows the worship leader with the people on either side, head to toe. Viewers can see who is leading and what they are doing.
 - **Close-up:** a face or a small object fills the frame. We don't use real close-ups. Our tightest shot is the upper-body shot of the pulpit, Cam 1 P3.
 
 ## Headroom
@@ -76,7 +76,7 @@ The motor is slow on purpose, so the camera moves smoothly. That means you can s
 A **preset** is a saved camera position: pan, tilt and zoom all stored together. You recall a preset with one button on the SuperJoy, and the camera moves there by itself. We write presets as camera + number, for example `Cam 1 P3`.
 
 <figure markdown="span">
-  ![Four numbered buttons, 1 to 4, each pointing to a small frame: Cam 1 P1 full stage, Cam 1 P2 worship leader, Cam 1 P3 pulpit, Cam 1 P4 announcements spot.](../assets/diagrams/glossary-preset.svg)
+  ![Four numbered buttons, 1 to 4, each pointing to a small frame: Cam 1 P1 full stage, Cam 1 P2 worship leader with vocalist and keys, Cam 1 P3 pulpit, Cam 1 P4 announcements spot.](../assets/diagrams/glossary-preset.svg)
   <figcaption>Each number recalls one saved shot. <strong>P1 is always the safe wide shot</strong>, on both cameras.</figcaption>
 </figure>
 
@@ -100,7 +100,7 @@ All scenes are on the [Scenes](scenes.md) page.
 An **overlay** is a picture placed on top of the camera shot. A **lower third** is an overlay across the bottom third of the frame. Our lyrics always use a lower third.
 
 <figure markdown="span">
-  ![Cam 1 shot of the worship leader with a dark lyrics bar across the bottom third of the frame.](../assets/diagrams/scene-2-cam1-lyrics.svg)
+  ![Cam 1 shot of the worship team with a dark lyrics bar across the bottom third of the frame.](../assets/diagrams/scene-2-cam1-lyrics.svg)
   <figcaption>Lyrics as a lower-third overlay on Cam 1 (Scene 2 — Cam 1 + Lyrics).</figcaption>
 </figure>
 
