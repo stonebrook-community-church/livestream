@@ -12,6 +12,7 @@ Style rules (keep them when adding diagrams):
 - No real lyrics, names or church details. Unknown values say "TBD".
 """
 
+from math import cos, radians, sin
 from pathlib import Path
 
 OUT = Path(__file__).resolve().parent.parent / "docs" / "assets" / "diagrams"
@@ -195,7 +196,11 @@ def view_cam1_p1():
 
 
 def view_cam1_p2():
-    return front_stage(470, 520) + person(480, 70, 980) + mic_stand(560, 210, 560, 1.4)
+    """Vocalist (left), worship leader (center) and keys player (right), head to toe."""
+    return (front_stage(380, 460)
+            + person(230, 125, 300) + mic_stand(262, 165, 425, 1.0)
+            + person(480, 100, 330) + mic_stand(515, 140, 430, 1.0)
+            + person(730, 125, 300) + keyboard(730, 288, 1.25))
 
 
 def view_cam1_p3():
@@ -254,7 +259,7 @@ PRESETS = [
     ("cam1-p1.svg", "Cam 1 P1", "Full stage wide (safe shot)", view_cam1_p1,
      chip(944, 482, "Whole stage in frame — the safe shot", anchor="end")),
     ("cam1-p2.svg", "Cam 1 P2", "Worship leader, medium", view_cam1_p2,
-     headroom(640, 70) + chip(944, 482, "Medium: waist up", anchor="end")),
+     headroom(580, 100) + chip(944, 482, "Medium: three people, head to toe", anchor="end")),
     ("cam1-p3.svg", "Cam 1 P3", "Pulpit, upper body (sermon front)", view_cam1_p3,
      headroom(640, 85) + chip(944, 482, "Upper body: chest up, behind pulpit", anchor="end")),
     ("cam1-p4.svg", "Cam 1 P4", "Announcements spot", view_cam1_p4,
@@ -301,13 +306,18 @@ def lyrics_bar():
             + text(W / 2, top + 122, "Lyrics line 2", 36, "bold", PAPER, "middle"))
 
 
+def sermon_slide():
+    """The slide box on the right side of Scene 7 — Sermon Split."""
+    return (f'<rect x="490" y="96" width="440" height="248" rx="6" fill="{FILL}" stroke="{INK}" stroke-width="3"/>'
+            + text(710, 170, "Sermon slide", 30, "bold", INK, "middle")
+            + f'<rect x="560" y="200" width="300" height="16" rx="8" fill="{SOFT}"/>'
+            + f'<rect x="560" y="232" width="240" height="16" rx="8" fill="{SOFT}"/>'
+            + f'<rect x="560" y="264" width="270" height="16" rx="8" fill="{SOFT}"/>')
+
+
 def scene_frames():
     lyric_note = chip(944, 312, "Lyrics: lower third only", anchor="end")
-    split = (f'<rect x="490" y="96" width="440" height="248" rx="6" fill="{FILL}" stroke="{INK}" stroke-width="3"/>'
-             + text(710, 170, "Sermon slide", 30, "bold", INK, "middle")
-             + f'<rect x="560" y="200" width="300" height="16" rx="8" fill="{SOFT}"/>'
-             + f'<rect x="560" y="232" width="240" height="16" rx="8" fill="{SOFT}"/>'
-             + f'<rect x="560" y="264" width="270" height="16" rx="8" fill="{SOFT}"/>'
+    split = (sermon_slide()
              + chip(710, 360, "ProPresenter Slides", anchor="middle")
              + chip(24, 482, "Cam 2 P3 — subject on the left"))
     brk = (f'<rect x="200" y="150" width="560" height="250" rx="12" fill="{PAPER}" fill-opacity="0.82" stroke="{INK}" stroke-width="2"/>'
@@ -535,10 +545,132 @@ def build_stream_deck():
         "Third row: empty.", d))
 
 
+# ---------- Glossary (Video Basics page) ----------
+
+def thumb(x, y, s, view, border=3):
+    """A mock frame drawn small, at scale `s`, with its top-left corner at (x, y)."""
+    return (f'<g transform="translate({x},{y}) scale({s})">'
+            f'<rect width="{W}" height="{H}" fill="{PAPER}"/>'
+            f'<g clip-path="url(#frame)">{view}</g>'
+            f'<rect x="{border / s / 2:.1f}" y="{border / s / 2:.1f}" width="{W - border / s:.1f}" '
+            f'height="{H - border / s:.1f}" fill="none" stroke="{INK}" stroke-width="{border / s:.1f}"/></g>')
+
+
+def arc(cx, cy, r, a1, a2):
+    """Double-headed arc arrow around (cx, cy), from angle a1 to a2 in degrees (0 = right, 90 = down)."""
+    x1, y1 = cx + r * cos(radians(a1)), cy + r * sin(radians(a1))
+    x2, y2 = cx + r * cos(radians(a2)), cy + r * sin(radians(a2))
+    large = 1 if abs(a2 - a1) > 180 else 0
+    return (f'<path d="M{x1:.1f},{y1:.1f} A{r},{r} 0 {large} 1 {x2:.1f},{y2:.1f}" stroke="{INK}" stroke-width="3.5" '
+            f'fill="none" marker-start="url(#arrow)" marker-end="url(#arrow)"/>')
+
+
+def ptz_camera(cx, cy, s=1.0, side=False):
+    """A PTZ camera. Seen from above by default, or from the side with `side=True`."""
+    if side:
+        return (f'<rect x="{cx - 50 * s:.1f}" y="{cy + 34 * s:.1f}" width="{100 * s:.1f}" height="{22 * s:.1f}" rx="4" fill="{DARK}"/>'
+                f'<rect x="{cx - 10 * s:.1f}" y="{cy + 10 * s:.1f}" width="{20 * s:.1f}" height="{26 * s:.1f}" fill="{MID}"/>'
+                f'<rect x="{cx - 45 * s:.1f}" y="{cy - 28 * s:.1f}" width="{80 * s:.1f}" height="{44 * s:.1f}" rx="8" fill="{INK}"/>'
+                f'<rect x="{cx + 35 * s:.1f}" y="{cy - 20 * s:.1f}" width="{18 * s:.1f}" height="{28 * s:.1f}" rx="3" fill="{INK}"/>')
+    return (f'<circle cx="{cx}" cy="{cy}" r="{48 * s:.1f}" fill="{PALE}" stroke="{MID}" stroke-width="2"/>'
+            f'<rect x="{cx - 40 * s:.1f}" y="{cy - 22 * s:.1f}" width="{70 * s:.1f}" height="{44 * s:.1f}" rx="8" fill="{INK}"/>'
+            f'<rect x="{cx + 30 * s:.1f}" y="{cy - 15 * s:.1f}" width="{18 * s:.1f}" height="{30 * s:.1f}" rx="3" fill="{INK}"/>')
+
+
+def build_glossary():
+    # Lead room: Cam 2 P3 with the facing direction and the open space marked.
+    lead = (guides()
+            + f'<line x1="318" y1="88" x2="420" y2="88" stroke="{INK}" stroke-width="3" marker-end="url(#arrow)"/>'
+            + chip(428, 70, "Faces this way", 16)
+            + f'<line x1="350" y1="440" x2="940" y2="440" stroke="{INK}" stroke-width="2.5" '
+              f'marker-start="url(#arrow)" marker-end="url(#arrow)"/>'
+            + chip(645, 396, "Lead room: open space on the side they face", 18, "middle"))
+    frame("glossary-lead-room.svg", "Cam 2 P3", "Lead room",
+          "Mock 16:9 frame of Cam 2 P3. The preacher stands on the left third and faces right. "
+          "An arrow marks the open space on the right side of the frame: the lead room.",
+          view_cam2_p3(), lead)
+
+    # Program vs. preview: the live picture next to the off-air camera.
+    w, h, s = 1000, 470, 0.46
+    tw, th = W * s, H * s
+    d = f'<rect width="{w}" height="{h}" rx="14" fill="{PAPER}"/>'
+    for x, head, sub, view, note, live in (
+            (40, "PROGRAM", "On air: viewers see this", view_cam1_p3(), "Scene 4 — Cam 1 Clean, Cam 1 P3", True),
+            (518, "PREVIEW", "Off air: safe to move", view_cam2_p3(), "Cam 2: recall Cam 2 P3 here", False)):
+        d += text(x, 44, head, 28, "bold")
+        d += text(x, 72, sub, 20, "normal", DARK)
+        d += thumb(x, 90, s, view, 8 if live else 2)
+        if live:
+            d += f'<rect x="{x + 14}" y="104" width="74" height="34" rx="6" fill="{INK}"/>' + text(x + 51, 128, "LIVE", 20, "bold", PAPER, "middle")
+        else:
+            d += (f'<rect x="{x + 14}" y="104" width="104" height="34" rx="6" fill="{PAPER}" stroke="{INK}" stroke-width="2"/>'
+                  + text(x + 66, 128, "OFF AIR", 18, "bold", INK, "middle"))
+        d += chip(x + tw / 2, 90 + th + 16, note, 17, "middle")
+    d += text(w / 2, h - 24, "Move only the camera that is off air. Then cut, so it becomes the program.", 19, "normal", INK, "middle")
+    (OUT / "glossary-program-preview.svg").write_text(svg(
+        w, h, "Program and preview",
+        "Two frames side by side. Left: PROGRAM, on air, showing Scene 4 — Cam 1 Clean on Cam 1 P3, with a thick "
+        "border and a LIVE label. Right: PREVIEW, off air, showing Cam 2 on Cam 2 P3. This is the camera you may move.", d))
+
+    # Cut: one shot replaced by the next.
+    w, h, s = 1000, 390, 0.42
+    tw, th = W * s, H * s
+    d = f'<rect width="{w}" height="{h}" rx="14" fill="{PAPER}"/>'
+    d += thumb(40, 40, s, view_cam1_p3())
+    d += thumb(w - 40 - tw, 40, s, view_cam2_p3() + sermon_slide())
+    d += chip(40 + tw / 2, 40 + th + 16, "Scene 4 — Cam 1 Clean", 17, "middle")
+    d += chip(w - 40 - tw / 2, 40 + th + 16, "Scene 7 — Sermon Split", 17, "middle")
+    d += arrow(40 + tw + 20, 40 + th / 2, w - 40 - tw - 20, 40 + th / 2)
+    d += text(w / 2, 40 + th / 2 - 18, "CUT", 24, "bold", INK, "middle")
+    d += text(w / 2, h - 24, "Press one Stream Deck button: the picture changes from one shot to the next.", 19, "normal", INK, "middle")
+    (OUT / "glossary-cut.svg").write_text(svg(
+        w, h, "Cut",
+        "Two frames with an arrow labeled CUT between them. Left: Scene 4 — Cam 1 Clean. Right: Scene 7 — Sermon Split. "
+        "Pressing one Stream Deck button switches from one to the other.", d))
+
+    # PTZ: pan, tilt, zoom.
+    w, h = 1000, 380
+    d = f'<rect width="{w}" height="{h}" rx="14" fill="{PAPER}"/>'
+    d += ptz_camera(170, 170) + arc(170, 170, 95, -55, 55)
+    d += text(170, 316, "PAN", 26, "bold", INK, "middle") + text(170, 346, "Turn left or right (seen from above)", 17, "normal", DARK, "middle")
+    d += ptz_camera(490, 170, 1.0, side=True) + arc(490, 170, 95, -50, 50)
+    d += text(490, 316, "TILT", 26, "bold", INK, "middle") + text(490, 346, "Aim up or down (seen from the side)", 17, "normal", DARK, "middle")
+    d += f'<rect x="700" y="70" width="240" height="135" fill="{PALE}" stroke="{INK}" stroke-width="3"/>'
+    d += f'<rect x="770" y="110" width="100" height="56" fill="none" stroke="{INK}" stroke-width="2.5" stroke-dasharray="8 6"/>'
+    for (x1, y1), (x2, y2) in (((706, 76), (764, 106)), ((934, 76), (876, 106)), ((706, 199), (764, 170)), ((934, 199), (876, 170))):
+        d += f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{INK}" stroke-width="2.5" marker-end="url(#arrow)"/>'
+    d += text(820, 316, "ZOOM", 26, "bold", INK, "middle") + text(820, 346, "Closer (dashed) or wider (solid)", 17, "normal", DARK, "middle")
+    (OUT / "glossary-ptz.svg").write_text(svg(
+        w, h, "PTZ: pan, tilt, zoom",
+        "Three panels. Pan: a camera seen from above, with a curved arrow showing it turning left and right. "
+        "Tilt: a camera seen from the side, with a curved arrow showing it aiming up and down. "
+        "Zoom: a frame with a smaller dashed frame inside; arrows point inward to show zooming closer.", d))
+
+    # Preset: one number, one saved shot.
+    w, h, s = 1000, 350, 0.215
+    tw, th = W * s, H * s
+    d = f'<rect width="{w}" height="{h}" rx="14" fill="{PAPER}"/>'
+    gap = (w - 4 * tw) / 5
+    for i, view in enumerate((view_cam1_p1, view_cam1_p2, view_cam1_p3, view_cam1_p4)):
+        x = gap + i * (tw + gap)
+        cx = x + tw / 2
+        d += f'<circle cx="{cx:.1f}" cy="62" r="30" fill="{PAPER}" stroke="{INK}" stroke-width="3"/>'
+        d += text(cx, 74, str(i + 1), 32, "bold", INK, "middle")
+        d += arrow(cx, 96, cx, 128)
+        d += thumb(x, 134, s, view())
+        d += text(cx, 134 + th + 30, f"Cam 1 P{i + 1}", 20, "bold", INK, "middle")
+    d += text(w / 2, h - 22, "Each preset number recalls one saved shot. P1 is always the safe wide shot.", 19, "normal", INK, "middle")
+    (OUT / "glossary-preset.svg").write_text(svg(
+        w, h, "Presets",
+        "Four numbered buttons, 1 to 4, each with an arrow down to a small frame: Cam 1 P1 full stage wide, "
+        "Cam 1 P2 worship leader with vocalist and keys, Cam 1 P3 pulpit, Cam 1 P4 announcements spot.", d))
+
+
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
     build_frames()
     build_signal_flow()
     build_room_map()
     build_stream_deck()
+    build_glossary()
     print(f"Wrote {len(list(OUT.glob('*.svg')))} SVGs to {OUT}")
